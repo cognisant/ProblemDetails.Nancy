@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.0;net4</TargetFrameworks>
+    <TargetFrameworks>netstandard1.6;net452</TargetFrameworks>
     <AssemblyName>CR.ProblemDetails.Nancy</AssemblyName>
     <RootNamespace>CR.ProblemDetails.Nancy</RootNamespace>
-	<Product>CR.ProblemDetails</Product>
+    <Product>CR.ProblemDetails</Product>
     <Company>Cognisant Research</Company>
     <Authors>Cognisant Research</Authors>
     <Description>The NancyFX extension package for Http Problem Details according to RFC 7807.</Description>
@@ -18,23 +18,23 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.0\CR.ProblemDetails.Nancy.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard1.6\CR.ProblemDetails.Nancy.xml</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard1.0\CR.ProblemDetails.Nancy.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netstandard1.6\CR.ProblemDetails.Nancy.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\net4\CR.ProblemDetails.Nancy.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\net452\CR.ProblemDetails.Nancy.xml</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net4\CR.ProblemDetails.Nancy.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net452\CR.ProblemDetails.Nancy.xml</DocumentationFile>
   </PropertyGroup>
 
 
@@ -43,6 +43,7 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="CR.ProblemDetails" Version="1.0.0-alpha0002" />
+    <PackageReference Include="Nancy" Version="[2.0.0-barneyrubble,3.0.0-a)" />
   </ItemGroup>
 
 </Project>
