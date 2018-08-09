@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.0;net4</TargetFrameworks>
+    <AssemblyName>CR.ProblemDetails.Nancy</AssemblyName>
+    <RootNamespace>CR.ProblemDetails.Nancy</RootNamespace>
+	<Product>CR.ProblemDetails</Product>
+    <Company>Cognisant Research</Company>
+    <Authors>Cognisant Research</Authors>
+    <Description>The NancyFX extension package for Http Problem Details according to RFC 7807.</Description>
+    <Copyright>Cognisant Research 2018</Copyright>
+    <PackageLicenseUrl>https://github.com/cognisant/ProblemDetails.Nancy/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/cognisant/ProblemDetails.Nancy</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/cognisant/ProblemDetails.Nancy/master/logo.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/cognisant/ProblemDetails.Nancy</RepositoryUrl>
+    <PackageTags>Http,Problem,Error,Details,RFC 7807,RFC,7807,Cognisant,Nancy,Fx,NancyFx</PackageTags>
+    <PackageReleaseNotes>https://GitHub.com/Cognisant/ProblemDetails.Nancy/releases/tag/$(Tag)</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.0\CR.ProblemDetails.Nancy.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard1.0\CR.ProblemDetails.Nancy.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\net4\CR.ProblemDetails.Nancy.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\net4\CR.ProblemDetails.Nancy.xml</DocumentationFile>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="CR.CodeStyle.CSharp.Full" Version="1.0.2-copyright-update0007">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="CR.ProblemDetails" Version="1.0.0-alpha0002" />
+  </ItemGroup>
+
+</Project>
