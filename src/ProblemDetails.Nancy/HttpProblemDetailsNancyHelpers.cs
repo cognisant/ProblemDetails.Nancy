@@ -6,6 +6,8 @@ namespace CR.ProblemDetails.Nancy
 {
     using System;
     using global::Nancy;
+    using global::Nancy.Bootstrapper;
+    using global::Nancy.TinyIoc;
     using HttpStatusCode = System.Net.HttpStatusCode;
 
     /// <summary>
@@ -40,6 +42,20 @@ namespace CR.ProblemDetails.Nancy
         /// If the <see cref="Exception"/> was a <see cref="HttpProblemDetailsException"/>, the <see cref="IHttpProblemDetails"/> from it will be used—otherwise,
         /// <see cref="IHttpProblemDetails"/> will be built based on the context's request <see cref="Url"/>, a generic title, and the type and message of the <see cref="Exception"/>.
         /// </returns>
+        /// <example>
+        /// This method can be added to the <see cref="ErrorPipeline"/> of a <see cref="INancyBootstrapper"/> in the following way:
+        /// private sealed class ExampleBoostrapper : <see cref="DefaultNancyBootstrapper"/>
+        /// {
+        ///     protected override void RequestStartup(<see cref="TinyIoCContainer"/> container, <see cref="IPipelines"/> pipelines, <see cref="NancyContext"/> context)
+        ///     {
+        ///         base.RequestStartup(container, pipelines, context);
+        ///         pipelines.OnError.AddItemToEndOfPipeline(<see cref="HttpProblemDetailsNancyHelpers"/>.<see cref="HttpProblemDetailsOnError"/>);
+        ///         <see cref="HttpProblemDetailsNancyHelpers"/>.<see cref="OnErrorHttpProblemAction "/> = (c, ex, pd) => Log.Error(ex, $"Failed to handle a request; exception of type {ex.GetType().Name} was thrown, with message: '{ex.Message}'.", pd);
+        ///     }
+        /// }
+        ///
+        /// The <see cref="OnErrorHttpProblemAction"/> is optional; if it is set to null, no action will be executed.
+        /// </example>
         public static dynamic HttpProblemDetailsOnError(NancyContext context, Exception exception)
         {
             var problemDetails = exception is HttpProblemDetailsException detailedException
