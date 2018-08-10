@@ -9,7 +9,6 @@ namespace CR.ProblemDetails.Nancy
     using global::Nancy;
     using global::Nancy.Bootstrapper;
     using global::Nancy.TinyIoc;
-    using HttpStatusCode = System.Net.HttpStatusCode;
 
     /// <summary>
     /// Helper methods used to implement <see cref="IHttpProblemDetails"/> usage with your Nancy APIs.
@@ -66,7 +65,7 @@ namespace CR.ProblemDetails.Nancy
                     context.Request.Url,
                     "An error occured while processing your request.",
                     $"{exception.GetType().Name} - {(string.IsNullOrWhiteSpace(exception.Message) ? "No Message" : $"'{exception.Message}'")}.",
-                    HttpStatusCode.InternalServerError);
+                    (int)HttpStatusCode.InternalServerError);
 
             OnErrorHttpProblemAction?.Invoke(context, exception, problemDetails);
 
@@ -75,7 +74,10 @@ namespace CR.ProblemDetails.Nancy
                     ? "application/problem+xml"
                     : "application/problem+json";
 
-            context.Response.StatusCode = (global::Nancy.HttpStatusCode)(int)problemDetails.Status;
+            context.Response.StatusCode = Enum.IsDefined(typeof(HttpStatusCode), problemDetails.Status)
+                ? (HttpStatusCode)problemDetails.Status
+                : HttpStatusCode.InternalServerError;
+
             return problemDetails;
         }
     }

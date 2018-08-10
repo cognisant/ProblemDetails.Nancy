@@ -42,7 +42,7 @@
     <PackageReference Include="CR.CodeStyle.CSharp.Full" Version="1.0.2-copyright-update0007">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="CR.ProblemDetails" Version="1.0.0-alpha0002" />
+    <PackageReference Include="CR.ProblemDetails" Version="1.0.0-alpha0003" />
     <PackageReference Include="Nancy" Version="[2.0.0-barneyrubble,3.0.0-a)" />
   </ItemGroup>
 
