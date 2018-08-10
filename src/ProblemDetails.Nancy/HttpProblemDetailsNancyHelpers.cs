@@ -5,6 +5,7 @@
 namespace CR.ProblemDetails.Nancy
 {
     using System;
+    using System.Linq;
     using global::Nancy;
     using global::Nancy.Bootstrapper;
     using global::Nancy.TinyIoc;
@@ -68,6 +69,12 @@ namespace CR.ProblemDetails.Nancy
                     HttpStatusCode.InternalServerError);
 
             OnErrorHttpProblemAction?.Invoke(context, exception, problemDetails);
+
+            context.Response.ContentType =
+                context.Request.Headers.Any(a => a.Key == "application/xml") && context.Request.Headers.Accept.All(a => a.Item1 != "application/json")
+                    ? "application/problem+xml"
+                    : "application/problem+json";
+
             return problemDetails;
         }
     }
