@@ -75,6 +75,7 @@ namespace CR.ProblemDetails.Nancy
                     ? "application/problem+xml"
                     : "application/problem+json";
 
+            context.Response.StatusCode = (global::Nancy.HttpStatusCode)(int)problemDetails.Status;
             return problemDetails;
         }
     }
