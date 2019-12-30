@@ -2,48 +2,55 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard1.6;net452</TargetFrameworks>
-    <AssemblyName>CR.ProblemDetails.Nancy</AssemblyName>
-    <RootNamespace>CR.ProblemDetails.Nancy</RootNamespace>
-    <Product>CR.ProblemDetails</Product>
-    <Company>Cognisant Research</Company>
-    <Authors>Cognisant Research</Authors>
+    <AssemblyName>CorshamScience.ProblemDetails.Nancy</AssemblyName>
+    <RootNamespace>CorshamScience.ProblemDetails.Nancy</RootNamespace>
+    <Product>CorshamScience.ProblemDetails</Product>
+    <Company>Corsham Science</Company>
+    <Authors>Corsham Science</Authors>
     <Description>The NancyFX extension package for Http Problem Details according to RFC 7807.</Description>
-    <Copyright>Cognisant Research 2018</Copyright>
-    <PackageLicenseUrl>https://github.com/cognisant/ProblemDetails.Nancy/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/cognisant/ProblemDetails.Nancy</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/cognisant/ProblemDetails.Nancy/master/logo.png</PackageIconUrl>
-    <RepositoryUrl>https://github.com/cognisant/ProblemDetails.Nancy</RepositoryUrl>
-    <PackageTags>Http,Problem,Error,Details,RFC 7807,RFC,7807,Cognisant,Nancy,Fx,NancyFx</PackageTags>
-    <PackageReleaseNotes>https://GitHub.com/Cognisant/ProblemDetails.Nancy/releases/tag/$(Tag)</PackageReleaseNotes>
+    <Copyright>Corsham Science 2019</Copyright>
+    <PackageProjectUrl>https://github.com/qphl/ProblemDetails.Nancy</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/qphl/ProblemDetails.Nancy</RepositoryUrl>
+    <PackageTags>Http,Problem,Error,Details,RFC 7807,RFC,7807,Corsham Science,Nancy,Fx,NancyFx</PackageTags>
+    <PackageReleaseNotes>https://GitHub.com/qphl/ProblemDetails.Nancy/releases/tag/$(Tag)</PackageReleaseNotes>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <PackageIcon>Logo.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.6\CR.ProblemDetails.Nancy.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard1.6\CorshamScience.ProblemDetails.Nancy.xml</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard1.6\CR.ProblemDetails.Nancy.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netstandard1.6\CorshamScience.ProblemDetails.Nancy.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\net452\CR.ProblemDetails.Nancy.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\net452\CorshamScience.ProblemDetails.Nancy.xml</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net452\CR.ProblemDetails.Nancy.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net452\CorshamScience.ProblemDetails.Nancy.xml</DocumentationFile>
   </PropertyGroup>
 
 
   <ItemGroup>
-    <PackageReference Include="CR.CodeStyle.CSharp.Full" Version="1.0.2-copyright-update0007">
+    <PackageReference Include="CorshamScience.CodeStyle.CSharp.Full" Version="3.0.0.0">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="CR.ProblemDetails" Version="1.0.0-alpha0003" />
     <PackageReference Include="Nancy" Version="[2.0.0-barneyrubble,3.0.0-a)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Logo.png">
+      <PackagePath></PackagePath>
+      <Pack>True</Pack>
+    </None>
   </ItemGroup>
 
 </Project>
