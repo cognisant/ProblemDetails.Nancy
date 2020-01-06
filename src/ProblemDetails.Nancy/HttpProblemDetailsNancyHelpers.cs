@@ -1,11 +1,12 @@
-﻿// <copyright file="HttpProblemDetailsNancyHelpers.cs" company="Cognisant Research">
-// Copyright (c) Cognisant Research. All rights reserved.
+﻿// <copyright file="HttpProblemDetailsNancyHelpers.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.ProblemDetails.Nancy
+namespace CorshamScience.ProblemDetails.Nancy
 {
     using System;
     using System.Linq;
+    using CorshamScience.ProblemDetails;
     using global::Nancy;
     using global::Nancy.Bootstrapper;
     using global::Nancy.TinyIoc;
