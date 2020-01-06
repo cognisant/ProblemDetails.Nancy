@@ -6,7 +6,7 @@ namespace CorshamScience.ProblemDetails.Nancy
 {
     using System;
     using System.Linq;
-    using CR.ProblemDetails;
+    using CorshamScience.ProblemDetails;
     using global::Nancy;
     using global::Nancy.Bootstrapper;
     using global::Nancy.TinyIoc;

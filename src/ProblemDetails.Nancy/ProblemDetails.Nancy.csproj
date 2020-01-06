@@ -42,7 +42,7 @@
     <PackageReference Include="CorshamScience.CodeStyle.CSharp.Full" Version="3.0.0.0">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="CR.ProblemDetails" Version="1.0.0-alpha0003" />
+    <PackageReference Include="CorshamScience.ProblemDetails" Version="2.0.0" />
     <PackageReference Include="Nancy" Version="[2.0.0-barneyrubble,3.0.0-a)" />
   </ItemGroup>
 
